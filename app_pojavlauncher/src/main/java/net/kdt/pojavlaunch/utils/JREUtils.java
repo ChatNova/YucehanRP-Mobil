@@ -318,6 +318,11 @@ public class JREUtils {
         activity.runOnUiThread(() -> Toast.makeText(activity, activity.getString(R.string.autoram_info_msg,LauncherPreferences.PREF_RAM_ALLOCATION), Toast.LENGTH_SHORT).show());
         System.out.println(JVMArgs);
 
+        // ----- YÜCEHANRP SUNUCUSUNA YÖNLENDİRME -----
+        userArgs.add("--server");
+        userArgs.add("yucehanrp.tkmc.net");
+        // ---------------------------------------------
+
         initJavaRuntime(runtimeHome);
         JREUtils.setupExitMethod(activity.getApplication());
         JREUtils.initializeHooks();
